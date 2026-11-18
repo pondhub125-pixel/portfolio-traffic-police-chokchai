@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ส.ต.ต.โชคชัย สมนิยาม | ผบ.หมู่ (ป.) ปฏิบัติหน้าที่งานจราจร สภ.หนองโดน จว.สระบุรี</title>
+    
+    <!-- Google Fonts: Prompt สำหรับหัวข้อและ UI, Sarabun สำหรับเนื้อหาที่เป็นทางการและอ่านง่าย -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome สำหรับไอคอน -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Prompt', 'sans-serif'],
+                        body: ['Sarabun', 'sans-serif'],
+                    },
+                    colors: {
+                        // โทนสีเลือดหมู (Royal Maroon / Police Crimson)
+                        primary: {
+                            50: '#fdf2f4',
+                            100: '#fce7eb',
+                            200: '#f9d0d9',
+                            300: '#f4a8b8',
+                            400: '#ec7691',
+                            500: '#df466b',
+                            600: '#b91c3c',
+                            700: '#800020', // สีเลือดหมูหลัก
+                            800: '#6b0f1a', // สีเลือดหมูเข้ม
+                            900: '#580d17',
+                            950: '#33050b',
+                        },
+                        // โทนสีทอง (Police Gold / Brass)
+                        gold: {
+                            50: '#fbf8eb',
+                            100: '#f5eccb',
+                            200: '#ebd794',
+                            300: '#e0bd58',
+                            400: '#d4af37', // สีทองหลัก
+                            500: '#c09323',
+                            600: '#9e711a',
+                            700: '#7e5418',
+                            800: '#69441a',
+                            900: '#59391a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300 font-sans antialiased selection:bg-primary-700 selection:text-white overflow-x-hidden">
+
+    <!-- 1. ส่วนหัว (Header / Navigation Bar) -->
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-slate-950/90 backdrop-blur-md border-b border-primary-100 dark:border-slate-800 transition-all duration-300">
+        <!-- แถบสีทองบางด้านบนสุดเพื่อความสง่างาม -->
+        <div class="h-1 w-full bg-gradient-to-r from-primary-800 via-gold-400 to-primary-800"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 sm:h-20">
+                <!-- โลโก้ / ชื่อย่อตำรวจจราจร -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-primary-700 to-primary-900 border-2 border-gold-400 flex items-center justify-center text-gold-300 shadow-md shadow-primary-900/20 group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-shield-halved text-xl"></i>
+                    </div>
+                    <div>
+                        <span class="font-bold text-base sm:text-lg tracking-tight text-slate-900 dark:text-white block leading-tight">
+                            ส.ต.ต.โชคชัย <span class="text-primary-700 dark:text-gold-400 font-semibold">| งานจราจร</span>
+                        </span>
+                        <span class="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 font-normal block">
+                            สภ.หนองโดน จว.สระบุรี
+                        </span>
+                    </div>
+                </a>
+
+                <!-- เมนูนำทาง (Desktop) -->
+                <nav class="hidden md:flex items-center space-x-1 lg:space-x-2">
+                    <a href="#about" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:text-primary-700 hover:bg-primary-50/70 dark:text-slate-300 dark:hover:text-gold-400 dark:hover:bg-slate-800/60 transition-colors">ประวัติและหน้าที่</a>
+                    <a href="#skills" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:text-primary-700 hover:bg-primary-50/70 dark:text-slate-300 dark:hover:text-gold-400 dark:hover:bg-slate-800/60 transition-colors">ทักษะเฉพาะด้าน</a>
+                    <a href="#projects" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:text-primary-700 hover:bg-primary-50/70 dark:text-slate-300 dark:hover:text-gold-400 dark:hover:bg-slate-800/60 transition-colors">ภารกิจและผลงาน</a>
+                    <a href="#experience" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:text-primary-700 hover:bg-primary-50/70 dark:text-slate-300 dark:hover:text-gold-400 dark:hover:bg-slate-800/60 transition-colors">การรับราชการ</a>
+                    <a href="#contact" class="ml-2 px-4 py-2.5 rounded-xl text-sm font-medium bg-primary-700 hover:bg-primary-800 text-white border border-gold-400/50 shadow-sm shadow-primary-800/20 transition-all hover:-translate-y-0.5 flex items-center gap-1.5">
+                        <i class="fa-solid fa-headset text-gold-300 text-xs"></i>
+                        <span>ติดต่อ / แจ้งเหตุ</span>
+                    </a>
+                </nav>
+
+                <!-- ปุ่มสลับโหมดสี & เมนูมือถือ -->
+                <div class="flex items-center gap-2">
+                    <button id="theme-toggle" aria-label="สลับโหมดสี" class="p-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 transition-colors">
+                        <i id="theme-icon-dark" class="fa-solid fa-moon hidden text-base"></i>
+                        <i id="theme-icon-light" class="fa-solid fa-sun text-gold-500 text-base"></i>
+                    </button>
+
+                    <button id="mobile-menu-btn" aria-label="เปิดเมนู" class="md:hidden p-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 transition-colors">
+                        <i class="fa-solid fa-bars text-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- เมนูนำทาง (Mobile Dropdown) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 px-4 pt-2 pb-5 space-y-1 shadow-xl">
+            <a href="#about" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-slate-700 hover:bg-primary-50 hover:text-primary-700 dark:text-slate-200 dark:hover:bg-slate-800">ประวัติและหน้าที่</a>
+            <a href="#skills" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-slate-700 hover:bg-primary-50 hover:text-primary-700 dark:text-slate-200 dark:hover:bg-slate-800">ทักษะเฉพาะด้าน</a>
+            <a href="#projects" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-slate-700 hover:bg-primary-50 hover:text-primary-700 dark:text-slate-200 dark:hover:bg-slate-800">ภารกิจและผลงาน</a>
+            <a href="#experience" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-slate-700 hover:bg-primary-50 hover:text-primary-700 dark:text-slate-200 dark:hover:bg-slate-800">ประวัติการรับราชการ</a>
+            <a href="#contact" class="mobile-nav-link block px-4 py-3 mt-2 rounded-xl text-base font-medium text-center bg-primary-700 text-white hover:bg-primary-800 border border-gold-400/50">ติดต่อสอบถาม / แจ้งเหตุจราจร</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- 2. ส่วนแนะนำตัว (Hero Section) -->
+        <section class="relative pt-28 pb-20 sm:pt-36 sm:pb-28 lg:pt-44 lg:pb-36 overflow-hidden">
+            <!-- พื้นหลังตกแต่งโทนสีเลือดหมู-ทอง -->
+            <div class="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
+                <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-primary-700/10 dark:bg-primary-600/15 blur-3xl"></div>
+                <div class="absolute top-1/2 -left-24 w-80 h-80 rounded-full bg-gold-400/15 dark:bg-gold-500/10 blur-3xl"></div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                    <!-- ข้อความแนะนำตัว -->
+                    <div class="lg:col-span-7 text-center lg:text-left reveal-element">
+                        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-50 dark:bg-primary-950/90 border border-primary-200 dark:border-primary-800 text-primary-800 dark:text-gold-300 text-xs sm:text-sm font-medium mb-6 shadow-sm">
+                            <i class="fa-solid fa-traffic-light text-primary-700 dark:text-gold-400"></i>
+                            <span>สำนักงานตำรวจแห่งชาติ • ตำรวจภูธรภาค 1</span>
+                        </div>
+
+                        <h1 class="text-3xl sm:text-5xl lg:text-[52px] font-bold tracking-tight text-slate-900 dark:text-white leading-tight mb-3">
+                            <span class="bg-gradient-to-r from-primary-700 via-primary-800 to-primary-600 dark:from-gold-300 dark:via-gold-400 dark:to-amber-200 bg-clip-text text-transparent">
+                                ส.ต.ต.โชคชัย สมนิยาม
+                            </span>
+                        </h1>
+
+                        <h2 class="text-lg sm:text-2xl font-semibold text-slate-800 dark:text-slate-200 mb-2">
+                            ผู้บังคับหมู่ (ป้องกันปราบปราม) ปฏิบัติหน้าที่งานจราจร
+                        </h2>
+                        <p class="text-base sm:text-lg font-medium text-primary-700 dark:text-gold-400 mb-6 flex items-center justify-center lg:justify-start gap-2">
+                            <i class="fa-solid fa-building-shield"></i>
+                            <span>สถานีตำรวจภูธรหนองโดน จังหวัดสระบุรี</span>
+                        </p>
+
+                        <blockquote class="font-body text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed mb-8 pl-4 border-l-4 border-gold-400 bg-white/60 dark:bg-slate-900/60 py-3 pr-4 rounded-r-xl">
+                            "มุ่งมั่นอำนวยความสะดวกด้านการจราจร บังคับใช้กฎหมายด้วยความเป็นธรรม และดูแลความปลอดภัยในชีวิตและทรัพย์สินของพี่น้องประชาชนบนท้องถนนอย่างเต็มกำลังความสามารถ"
+                        </blockquote>
+
+                        <!-- ปุ่ม Call-to-Action -->
+                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                            <a href="#contact" class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-primary-700 hover:bg-primary-800 text-white font-medium border border-gold-400/60 shadow-lg shadow-primary-800/25 transition-all hover:-translate-y-0.5 flex items-center justify-center gap-2.5">
+                                <i class="fa-solid fa-phone-volume text-gold-300"></i>
+                                <span>ติดต่อสอบถาม / แจ้งเหตุจราจร</span>
+                            </a>
+                            <a href="#projects" class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-white dark:bg-slate-900 hover:bg-primary-50/50 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-100 font-medium border border-slate-300 dark:border-slate-700 shadow-sm transition-all hover:-translate-y-0.5 flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-list-check text-primary-700 dark:text-gold-400"></i>
+                                <span>ดูภารกิจและผลงาน</span>
+                            </a>
+                        </div>
+
+                        <!-- ข้อมูลสำคัญย่อ -->
+                        <div class="mt-10 pt-8 border-t border-slate-200/80 dark:border-slate-800/80 grid grid-cols-3 gap-4 max-w-lg mx-auto lg:mx-0">
+                            <div>
+                                <div class="text-xl sm:text-2xl font-bold text-primary-700 dark:text-gold-400">งานจราจร</div>
+                                <div class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">สายงานปฏิบัติหน้าที่</div>
+                            </div>
+                            <div>
+                                <div class="text-xl sm:text-2xl font-bold text-primary-700 dark:text-gold-400">สภ.หนองโดน</div>
+                                <div class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">หน่วยสังกัด จว.สระบุรี</div>
+                            </div>
+                            <div>
+                                <div class="text-xl sm:text-2xl font-bold text-primary-700 dark:text-gold-400">24 ชม.</div>
+                                <div class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">พร้อมบริการประชาชน</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- กรอบรูปโปรไฟล์ (สามารถเปลี่ยน URL รูปจริงได้ง่ายในแท็ก <img> ด้านล่าง) -->
+                    <div class="lg:col-span-5 flex justify-center reveal-element">
+                        <div class="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
+                            <!-- กรอบพื้นหลังสีเลือดหมูและขอบทอง -->
+                            <div class="absolute inset-0 rounded-3xl bg-gradient-to-tr from-primary-800 to-gold-500 rotate-6 opacity-25 dark:opacity-40 transition-transform duration-500 hover:rotate-12"></div>
+                            <div class="absolute inset-0 rounded-3xl border-2 border-gold-400/60 -rotate-3"></div>
+                            
+                            <!-- กรอบแสดงรูปภาพ / Avatar ตำรวจจราจร -->
+                            <div class="relative w-full h-full rounded-3xl overflow-hidden bg-gradient-to-b from-primary-800 to-primary-950 shadow-2xl border-4 border-gold-400 flex flex-col items-center justify-center">
+                                <!-- หมายเหตุ: หากต้องการใส่รูปถ่ายจริงในเครื่องแบบ ให้เปลี่ยน src ด้านล่างเป็นไฟล์รูปภาพของคุณได้เลยครับ -->
+                                <img 
+                                    src="" 
+                                    onerror="this.style.display='none'; document.getElementById('police-avatar-placeholder').classList.remove('hidden');"
+                                    alt="ส.ต.ต.โชคชัย สมนิยาม ผบ.หมู่ (ป.) งานจราจร สภ.หนองโดน" 
+                                    class="w-full h-full object-cover object-center hidden"
+                                >
+                                
+                                <!-- Avatar SVG ตำรวจจราจรมาตรฐาน (แสดงผลอัตโนมัติเมื่อยังไม่ได้ใส่ไฟล์รูปภาพ) -->
+                                <div id="police-avatar-placeholder" class="w-full h-full flex flex-col items-center justify-center p-6 text-center relative">
+                                    <!-- ลวดลายพื้นหลังตราโล่จางๆ -->
+                                    <i class="fa-solid fa-shield-halved text-[180px] text-white/5 absolute"></i>
+                                    
+                                    <!-- ไอคอนหมวก/สัญลักษณ์ตำรวจจราจร -->
+                                    <div class="relative z-10 w-28 h-28 sm:w-32 sm:h-32 rounded-full bg-gradient-to-b from-primary-700 to-primary-900 border-4 border-gold-400 shadow-xl flex items-center justify-center mb-4">
+                                        <i class="fa-solid fa-user-shield text-5xl sm:text-6xl text-gold-300"></i>
+                                    </div>
+                                    <div class="relative z-10">
+                                        <span class="px-3 py-1 rounded-full bg-gold-400/20 border border-gold-400/50 text-gold-300 text-xs font-semibold tracking-wide">
+                                            TRAFFIC POLICE
+                                        </span>
+                                        <h3 class="text-white font-bold text-lg sm:text-xl mt-2">ส.ต.ต.โชคชัย สมนิยาม</h3>
+                                        <p class="text-primary-200 text-xs sm:text-sm mt-0.5">ผบ.หมู่ (ป.) สภ.หนองโดน</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- ป้ายลอยตกแต่ง -->
+                            <div class="absolute -bottom-4 -left-4 sm:-left-6 bg-white dark:bg-slate-900 px-4 py-3 rounded-2xl shadow-xl border border-gold-400/50 flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-primary-700 text-gold-300 flex items-center justify-center text-lg shadow-inner">
+                                    <i class="fa-solid fa-traffic-light"></i>
+                                </div>
+                                <div>
+                                    <div class="text-[11px] text-slate-500 dark:text-slate-400">สายงานปฏิบัติหน้าที่</div>
+                                    <div class="text-sm font-bold text-primary-800 dark:text-gold-400">งานจราจร สภ.หนองโดน</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. ส่วนประวัติและหน้าที่ความรับผิดชอบ (About Me) -->
+        <section id="about" class="py-20 sm:py-28 bg-white dark:bg-slate-900/50 border-y border-slate-200/80 dark:border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl mx-auto text-center mb-16 reveal-element">
+                    <span class="text-primary-700 dark:text-gold-400 font-semibold text-sm tracking-wider uppercase">Profile & Duty</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mt-2">ประวัติและหน้าที่ความรับผิดชอบ</h2>
+                    <div class="w-20 h-1 bg-gradient-to-r from-primary-700 to-gold-400 mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+                    <!-- บทบาทหน้าที่ -->
+                    <div class="lg:col-span-7 space-y-6 reveal-element">
+                        <h3 class="text-2xl font-bold text-slate-900 dark:text-white leading-snug">
+                            ผู้พิทักษ์สันติราษฎร์สายงานจราจร เพื่อความปลอดภัยของชาวอำเภอหนองโดน
+                        </h3>
+                        <p class="font-body text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+                            กระผม <strong>สิบตำรวจตรี โชคชัย สมนิยาม</strong> ปัจจุบันดำรงตำแหน่ง <strong>ผู้บังคับหมู่ (ป้องกันปราบปราม) ปฏิบัติหน้าที่งานจราจร</strong> สังกัด <strong>สถานีตำรวจภูธรหนองโดน ตำรวจภูธรจังหวัดสระบุรี</strong> มีความมุ่งมั่นในการปฏิบัติหน้าที่ดูแลความสงบเรียบร้อยและอำนวยความสะดวกด้านการจราจรในเขตพื้นที่รับผิดชอบ
+                        </p>
+                        <p class="font-body text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+                            <strong>อุดมการณ์ในการปฏิบัติหน้าที่:</strong> ยึดมั่นในระเบียบวินัยของข้าราชการตำรวจ ปฏิบัติหน้าที่ด้วยความซื่อสัตย์สุจริต สุภาพอ่อนโยนต่อประชาชน แต่เด็ดขาดในการบังคับใช้กฎหมายจราจรเพื่อลดอุบัติเหตุและความสูญเสียบนท้องถนนอย่างยั่งยืน
+                        </p>
+
+                        <!-- ภารกิจหลัก 3 ด้าน -->
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
+                            <div class="p-4 rounded-2xl bg-primary-50/60 dark:bg-slate-800/80 border border-primary-200/70 dark:border-slate-700">
+                                <i class="fa-solid fa-road text-primary-700 dark:text-gold-400 text-xl mb-2"></i>
+                                <h4 class="font-semibold text-slate-900 dark:text-white text-sm">อำนวยการจราจร</h4>
+                                <p class="font-body text-xs text-slate-600 dark:text-slate-400 mt-1">จัดการจราจรชั่วโมงเร่งด่วน หน้าสถานศึกษา และจุดเสี่ยง</p>
+                            </div>
+                            <div class="p-4 rounded-2xl bg-primary-50/60 dark:bg-slate-800/80 border border-primary-200/70 dark:border-slate-700">
+                                <i class="fa-solid fa-scale-balanced text-primary-700 dark:text-gold-400 text-xl mb-2"></i>
+                                <h4 class="font-semibold text-slate-900 dark:text-white text-sm">กวดขันวินัยจราจร</h4>
+                                <p class="font-body text-xs text-slate-600 dark:text-slate-400 mt-1">บังคับใช้กฎหมายจราจรทางบกเพื่อป้องกันอุบัติเหตุ</p>
+                            </div>
+                            <div class="p-4 rounded-2xl bg-primary-50/60 dark:bg-slate-800/80 border border-primary-200/70 dark:border-slate-700">
+                                <i class="fa-solid fa-hand-holding-heart text-primary-700 dark:text-gold-400 text-xl mb-2"></i>
+                                <h4 class="font-semibold text-slate-900 dark:text-white text-sm">บริการประชาชน</h4>
+                                <p class="font-body text-xs text-slate-600 dark:text-slate-400 mt-1">ช่วยเหลือเหตุฉุกเฉิน รถเสีย และให้คำแนะนำเส้นทาง</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- การ์ดข้อมูลข้าราชการ -->
+                    <div class="lg:col-span-5 reveal-element">
+                        <div class="bg-slate-50 dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border-2 border-primary-700/20 dark:border-slate-800 shadow-sm relative overflow-hidden">
+                            <div class="absolute top-0 right-0 w-24 h-24 bg-primary-700/5 rounded-bl-full pointer-events-none"></div>
+                            
+                            <h4 class="text-lg font-bold text-primary-800 dark:text-gold-400 mb-6 flex items-center gap-2.5">
+                                <i class="fa-solid fa-id-badge"></i>
+                                <span>ข้อมูลสังกัดและตำแหน่ง</span>
+                            </h4>
+                            <ul class="space-y-4 text-sm sm:text-base">
+                                <li class="flex justify-between py-2.5 border-b border-slate-200/80 dark:border-slate-800">
+                                    <span class="text-slate-500 dark:text-slate-400">ยศ - ชื่อ - สกุล:</span>
+                                    <span class="font-semibold text-slate-900 dark:text-white">ส.ต.ต.โชคชัย สมนิยาม</span>
+                                </li>
+                                <li class="flex justify-between py-2.5 border-b border-slate-200/80 dark:border-slate-800">
+                                    <span class="text-slate-500 dark:text-slate-400">ตำแหน่ง:</span>
+                                    <span class="font-semibold text-slate-900 dark:text-white text-right">ผบ.หมู่ (ป.) งานจราจร</span>
+                                </li>
+                                <li class="flex justify-between py-2.5 border-b border-slate-200/80 dark:border-slate-800">
+                                    <span class="text-slate-500 dark:text-slate-400">สังกัด:</span>
+                                    <span class="font-semibold text-slate-900 dark:text-white text-right">สภ.หนองโดน จว.สระบุรี</span>
+                                </li>
+                                <li class="flex justify-between py-2.5 border-b border-slate-200/80 dark:border-slate-800">
+                                    <span class="text-slate-500 dark:text-slate-400">กองบัญชาการ:</span>
+                                    <span class="font-medium text-slate-900 dark:text-white">ตำรวจภูธรภาค 1 (ภ.1)</span>
+                                </li>
+                                <li class="flex justify-between py-2.5">
+                                    <span class="text-slate-500 dark:text-slate-400">สถานะการปฏิบัติงาน:</span>
+                                    <span class="inline-flex items-center gap-1.5 font-semibold text-emerald-600 dark:text-emerald-400">
+                                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> ปฏิบัติหน้าที่ราชการ
+                                    </span>
+                                </li>
+                            </ul>
+
+                            <div class="mt-8">
+                                <a href="#contact" class="w-full py-3 px-4 rounded-xl bg-primary-700 hover:bg-primary-800 text-white font-medium text-sm border border-gold-400/50 flex items-center justify-center gap-2 transition-colors shadow-sm">
+                                    <i class="fa-solid fa-envelope-open-text text-gold-300"></i>
+                                    <span>ติดต่อประสานงานราชการ</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. ส่วนทักษะและความเชี่ยวชาญเฉพาะด้าน (Skills & Competencies) -->
+        <section id="skills" class="py-20 sm:py-28">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl mx-auto text-center mb-16 reveal-element">
+                    <span class="text-primary-700 dark:text-gold-400 font-semibold text-sm tracking-wider uppercase">Competencies</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mt-2">ทักษะและความเชี่ยวชาญเฉพาะด้าน</h2>
+                    <div class="w-20 h-1 bg-gradient-to-r from-primary-700 to-gold-400 mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+                    <!-- หมวดหมู่ที่ 1: ทักษะหลักสายงานจราจรและกฎหมาย -->
+                    <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-slate-200/80 dark:border-slate-800 shadow-sm reveal-element">
+                        <div class="flex items-center gap-3.5 mb-6">
+                            <div class="w-12 h-12 rounded-2xl bg-primary-700 text-gold-300 flex items-center justify-center text-xl shadow-sm">
+                                <i class="fa-solid fa-traffic-light"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white">การจัดการจราจรและการบังคับใช้กฎหมาย</h3>
+                                <p class="text-xs text-slate-500 dark:text-slate-400">ความเชี่ยวชาญหลักในการปฏิบัติหน้าที่สายงานจราจร</p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-5">
+                            <!-- Skill 1 -->
+                            <div>
+                                <div class="flex justify-between text-sm font-medium mb-1.5">
+                                    <span class="text-slate-800 dark:text-slate-200 flex items-center gap-2">
+                                        <i class="fa-solid fa-hand-point-up text-primary-700 dark:text-gold-400"></i> การอำนวยความสะดวกและจัดการจราจร
+                                    </span>
+                                    <span class="text-primary-700 dark:text-gold-400 font-bold">95%</span>
+                                </div>
+                                <div class="w-full h-2.5 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+                                    <div class="skill-bar h-full bg-gradient-to-r from-primary-700 to-gold-400 rounded-full transition-all duration-1000 ease-out" data-width="95%" style="width: 0%"></div>
+                                </div>
+                            </div>
+
+                            <!-- Skill 2 -->
+                            <div>
+                                <div class="flex justify-between text-sm font-medium mb-1.5">
+                                    <span class="text-slate-800 dark:text-slate-200 flex items-center gap-2">
+                                        <i class="fa-solid fa-book-open text-primary-700 dark:text-gold-400"></i> กฎหมายจราจรทางบกและงานสอบสวนเบื้องต้น
+                                    </span>
+                                    <span class="text-primary-700 dark:text-gold-400 font-bold">90%</span>
+                                </div>
+                                <div class="w-full h-2.5 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+                                    <div class="skill-bar h-full bg-gradient-to-r from-primary-700 to-gold-400 rounded-full transition-all duration-1000 ease-out" data-width="90%" style="width: 0%"></div>
+                                </div>
+                            </div>
+
+                            <!-- Skill 3 -->
+                            <div>
+                                <div class="flex justify-between text-sm font-medium mb-1.5">
+                                    <span class="text-slate-800 dark:text-slate-200 flex items-center gap-2">
+                                        <i class="fa-solid fa-car-burst text-primary-700 dark:text-gold-400"></i> การตรวจสถานที่เกิดเหตุและคลี่คลายอุบัติเหตุ
+                                    </span>
+                                    <span class="text-primary-700 dark:text-gold-400 font-bold">88%</span>
+                                </div>
+                                <div class="w-full h-2.5 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+                                    <div class="skill-bar h-full bg-gradient-to-r from-primary-700 to-gold-400 rounded-full transition-all duration-1000 ease-out" data-width="88%" style="width: 0%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- หมวดหมู่ที่ 2: การกู้ชีพ การสื่อสาร และเทคโนโลยี -->
+                    <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-slate-200/80 dark:border-slate-800 shadow-sm reveal-element">
+                        <div class="flex items-center gap-3.5 mb-6">
+                            <div class="w-12 h-12 rounded-2xl bg-primary-800 text-gold-300 flex items-center justify-center text-xl shadow-sm">
+                                <i class="fa-solid fa-kit-medical"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white">การช่วยเหลือฉุกเฉินและเทคโนโลยีตำรวจ</h3>
+                                <p class="text-xs text-slate-500 dark:text-slate-400">ทักษะเสริมเพื่อยกระดับการบริการประชาชน</p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-5">
+                            <!-- Skill 4 -->
+                            <div>
+                                <div class="flex justify-between text-sm font-medium mb-1.5">
+                                    <span class="text-slate-800 dark:text-slate-200 flex items-center gap-2">
+                                        <i class="fa-solid fa-heart-pulse text-rose-600"></i> การปฐมพยาบาลและการกู้ชีพเบื้องต้น (CPR/First Aid)
+                                    </span>
+                                    <span class="text-primary-700 dark:text-gold-400 font-bold">92%</span>
+                                </div>
+                                <div class="w-full h-2.5 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+                                    <div class="skill-bar h-full bg-gradient-to-r from-primary-800 to-gold-400 rounded-full transition-all duration-1000 ease-out" data-width="92%" style="width: 0%"></div>
+                                </div>
+                            </div>
+
+                            <!-- Skill 5 -->
+                            <div>
+                                <div class="flex justify-between text-sm font-medium mb-1.5">
+                                    <span class="text-slate-800 dark:text-slate-200 flex items-center gap-2">
+                                        <i class="fa-solid fa-comments text-primary-700 dark:text-gold-400"></i> การสื่อสาร เจรจาไกล่เกลี่ย และบริการประชาชน
+                                    </span>
+                                    <span class="text-primary-700 dark:text-gold-400 font-bold">94%</span>
+                                </div>
+                                <div class="w-full h-2.5 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+                                    <div class="skill-bar h-full bg-gradient-to-r from-primary-800 to-gold-400 rounded-full transition-all duration-1000 ease-out" data-width="94%" style="width: 0%"></div>
+                                </div>
+                            </div>
+
+                            <!-- Skill 6 -->
+                            <div>
+                                <div class="flex justify-between text-sm font-medium mb-1.5">
+                                    <span class="text-slate-800 dark:text-slate-200 flex items-center gap-2">
+                                        <i class="fa-solid fa-laptop-file text-primary-700 dark:text-gold-400"></i> การใช้เทคโนโลยีและระบบสารสนเทศตำรวจ (PTM / POLIS)
+                                    </span>
+                                    <span class="text-primary-700 dark:text-gold-400 font-bold">88%</span>
+                                </div>
+                                <div class="w-full h-2.5 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+                                    <div class="skill-bar h-full bg-gradient-to-r from-primary-800 to-gold-400 rounded-full transition-all duration-1000 ease-out" data-width="88%" style="width: 0%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tag ความสามารถเสริม -->
+                        <div class="mt-7 pt-5 border-t border-slate-100 dark:border-slate-800">
+                            <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-3">อุปกรณ์และระบบปฏิบัติการที่เชี่ยวชาญ</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-primary-50 dark:bg-slate-800 text-primary-800 dark:text-gold-300 border border-primary-100 dark:border-slate-700">ระบบใบสั่งอิเล็กทรอนิกส์ (PTM)</span>
+                                <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-primary-50 dark:bg-slate-800 text-primary-800 dark:text-gold-300 border border-primary-100 dark:border-slate-700">วิทยุสื่อสารทางยุทธวิธี</span>
+                                <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-primary-50 dark:bg-slate-800 text-primary-800 dark:text-gold-300 border border-primary-100 dark:border-slate-700">เครื่องตรวจวัดแอลกอฮอล์</span>
+                                <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-primary-50 dark:bg-slate-800 text-primary-800 dark:text-gold-300 border border-primary-100 dark:border-slate-700">การควบคุมฝูงชนเบื้องต้น</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. ส่วนภารกิจและผลงาน (Portfolio / Missions) -->
+        <!-- หมายเหตุสำหรับผู้พัฒนา: การ์ดผลงานถูกจัดโครงสร้างแยกเป็นแต่ละ <article> เพื่อให้สามารถแก้ไขข้อความ รูปภาพ หรือเพิ่มการ์ดใหม่ในอนาคตได้สะดวก -->
+        <section id="projects" class="py-20 sm:py-28 bg-white dark:bg-slate-900/50 border-y border-slate-200/80 dark:border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl mx-auto text-center mb-16 reveal-element">
+                    <span class="text-primary-700 dark:text-gold-400 font-semibold text-sm tracking-wider uppercase">Missions & Portfolio</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mt-2">ภารกิจและผลงานในหน้าที่</h2>
+                    <div class="w-20 h-1 bg-gradient-to-r from-primary-700 to-gold-400 mx-auto mt-4 rounded-full"></div>
+                    <p class="font-body text-slate-600 dark:text-slate-400 mt-4">
+                        ตัวอย่างการปฏิบัติหน้าที่ด้านงานจราจรและการบริการประชาชนในเขตพื้นที่ สภ.หนองโดน จว.สระบุรี (สามารถอัปเดตรูปภาพและรายละเอียดเพิ่มเติมได้ในภายหลัง)
+                    </p>
+                </div>
+
+                <div id="missions-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- ภารกิจที่ 1 -->
+                    <article class="group bg-slate-50 dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200/80 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col reveal-element">
+                        <div class="relative h-52 sm:h-60 overflow-hidden bg-gradient-to-br from-primary-800 to-primary-950 flex items-center justify-center">
+                            <!-- หากมีรูปภาพภารกิจจริง สามารถใส่ใน src ด้านล่างได้ทันที -->
+                            <img 
+                                src="" 
+                                onerror="this.style.display='none';"
+                                alt="การอำนวยความสะดวกจราจรหน้าโรงเรียน" 
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            >
+                            <div class="text-center p-6">
+                                <i class="fa-solid fa-children text-5xl text-gold-400 mb-3"></i>
+                                <div class="text-white/90 text-sm font-medium">พื้นที่หน้าสถานศึกษา อ.หนองโดน</div>
+                            </div>
+                            <div class="absolute top-4 left-4 flex flex-wrap gap-2">
+                                <span class="px-3 py-1 rounded-full text-xs font-medium bg-primary-950/90 text-gold-300 border border-gold-400/40 backdrop-blur-sm">
+                                    อำนวยการจราจร
+                                </span>
+                                <span class="px-3 py-1 rounded-full text-xs font-medium bg-amber-500/90 text-slate-950 font-semibold">
+                                    อยู่ระหว่างอัปเดตข้อมูลเพิ่มเติม
+                                </span>
+                            </div>
+                        </div>
+                        <div class="p-6 sm:p-8 flex-1 flex flex-col">
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-primary-700 dark:group-hover:text-gold-400 transition-colors">
+                                โครงการอำนวยความสะดวกจราจรหน้าสถานศึกษาช่วงเช้า-เย็น
+                            </h3>
+                            <p class="font-body text-slate-600 dark:text-slate-400 text-sm sm:text-base mt-3 leading-relaxed flex-1">
+                                ปฏิบัติหน้าที่อำนวยความสะดวกด้านการจราจรและพานักเรียนข้ามทางม้าลายบริเวณหน้าโรงเรียนในเขตพื้นที่ สภ.หนองโดน เพื่อป้องกันอุบัติเหตุและสร้างความปลอดภัยให้แก่เยาวชนและผู้ปกครอง
+                            </p>
+                            <div class="flex flex-wrap gap-2 mt-5">
+                                <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-primary-50 dark:bg-primary-950 text-primary-800 dark:text-gold-300">ความปลอดภัยทางถนน</span>
+                                <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-primary-50 dark:bg-primary-950 text-primary-800 dark:text-gold-300">เขตสถานศึกษา</span>
+                            </div>
+                            <div class="mt-6 pt-5 border-t border-slate-200/70 dark:border-slate-800 flex items-center justify-between">
+                                <button onclick="openProjectModal('โครงการอำนวยความสะดวกจราจรหน้าสถานศึกษา', 'ปฏิบัติหน้าที่ประจำจุดหน้าโรงเรียนในเขตพื้นที่รับผิดชอบของ สภ.หนองโดน จว.สระบุรี ในช่วงเวลาเร่งด่วนเช้าและเย็น เพื่อจัดระเบียบการจอดรถรับ-ส่งนักเรียน และดูแลความปลอดภัยในการข้ามถนน (อยู่ระหว่างอัปเดตรูปภาพและสถิติเพิ่มเติม)', ['อำนวยการจราจร', 'ความปลอดภัยนักเรียน', 'สภ.หนองโดน'])" class="text-sm font-semibold text-primary-700 dark:text-gold-400 hover:underline flex items-center gap-1.5">
+                                    <span>ดูรายละเอียดภารกิจ</span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                                </button>
+                                <span class="text-xs text-slate-400">สภ.หนองโดน</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- ภารกิจที่ 2 -->
+                    <article class="group bg-slate-50 dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200/80 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col reveal-element">
+                        <div class="relative h-52 sm:h-60 overflow-hidden bg-gradient-to-br from-slate-800 to-primary-900 flex items-center justify-center">
+                            <img 
+                                src="" 
+                                onerror="this.style.display='none';"
+                                alt="โครงการรณรงค์สวมหมวกนิรภัย 100%" 
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            >
+                            <div class="text-center p-6">
+                                <i class="fa-solid fa-helmet-safety text-5xl text-gold-400 mb-3"></i>
+                                <div class="text-white/90 text-sm font-medium">รณรงค์ขับขี่ปลอดภัย สวมหมวกนิรภัย 100%</div>
+                            </div>
+                            <div class="absolute top-4 left-4 flex flex-wrap gap-2">
+                                <span class="px-3 py-1 rounded-full text-xs font-medium bg-primary-950/90 text-gold-300 border border-gold-400/40 backdrop-blur-sm">
+                                    ประชาสัมพันธ์ & รณรงค์
+                                </span>
+                                <span class="px-3 py-1 rounded-full text-xs font-medium bg-amber-500/90 text-slate-950 font-semibold">
+                                    อยู่ระหว่างอัปเดตข้อมูลเพิ่มเติม
+                                </span>
+                            </div>
+                        </div>
+                        <div class="p-6 sm:p-8 flex-1 flex flex-col">
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-primary-700 dark:group-hover:text-gold-400 transition-colors">
+                                โครงการรณรงค์สวมหมวกนิรภัย 100% และขับขี่ปลอดภัย
+                            </h3>
+                            <p class="font-body text-slate-600 dark:text-slate-400 text-sm sm:text-base mt-3 leading-relaxed flex-1">
+                                สร้างจิตสำนึกด้านวินัยจราจรให้แก่ประชาชนและผู้ขับขี่รถจักรยานยนต์ในอำเภอหนองโดน เน้นย้ำการสวมหมวกนิรภัยทั้งผู้ขับขี่และผู้ซ้อนท้าย เพื่อลดความรุนแรงจากการเกิดอุบัติเหตุ
+                            </p>
+                            <div class="flex flex-wrap gap-2 mt-5">
+                                <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-primary-50 dark:bg-primary-950 text-primary-800 dark:text-gold-300">หมวกนิรภัย 100%</span>
+                                <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-primary-50 dark:bg-primary-950 text-primary-800 dark:text-gold-300">สร้างวินัยจราจร</span>
+                            </div>
+                            <div class="mt-6 pt-5 border-t border-slate-200/70 dark:border-slate-800 flex items-center justify-between">
+                                <button onclick="openProjectModal('โครงการรณรงค์สวมหมวกนิรภัย 100%', 'กิจกรรมประชาสัมพันธ์ให้ความรู้ด้านกฎจราจรและรณรงค์ให้ประชาชนตระหนักถึงความสำคัญของการสวมหมวกนิรภัยทุกครั้งที่ขับขี่รถจักรยานยนต์ (อยู่ระหว่างอัปเดตข้อมูลและภาพกิจกรรมเพิ่มเติม)', ['ประชาสัมพันธ์', 'ลดอุบัติเหตุ', 'จว.สระบุรี'])" class="text-sm font-semibold text-primary-700 dark:text-gold-400 hover:underline flex items-center gap-1.5">
+                                    <span>ดูรายละเอียดภารกิจ</span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                                </button>
+                                <span class="text-xs text-slate-400">สภ.หนองโดน</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- ภารกิจที่ 3 -->
+                    <article class="group bg-slate-50 dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200/80 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col reveal-element">
+                        <div class="relative h-52 sm:h-60 overflow-hidden bg-gradient-to-br from-primary-900 to-slate-900 flex items-center justify-center">
+                            <img 
+                                src="" 
+                                onerror="this.style.display='none';"
+                                alt="การตั้งจุดตรวจกวดขันวินัยจราจร" 
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            >
+                            <div class="text-center p-6">
+                                <i class="fa-solid fa-shield-halved text-5xl text-gold-400 mb-3"></i>
+                                <div class="text-white/90 text-sm font-medium">จุดตรวจกวดขันวินัยจราจรและป้องกันอาชญากรรม</div>
+                            </div>
+                            <div class="absolute top-4 left-4 flex flex-wrap gap-2">
+                                <span class="px-3 py-1 rounded-full text-xs font-medium bg-primary-950/90 text-gold-300 border border-gold-400/40 backdrop-blur-sm">
+                                    บังคับใช้กฎหมาย
+                                </span>
+                                <span class="px-3 py-1 rounded-full text-xs font-medium bg-amber-500/90 text-slate-950 font-semibold">
+                                    อยู่ระหว่างอัปเดตข้อมูลเพิ่มเติม
+                                </span>
+                            </div>
+                        </div>
+                        <div class="p-6 sm:p-8 flex-1 flex flex-col">
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-primary-700 dark:group-hover:text-gold-400 transition-colors">
+                                การตั้งจุดตรวจกวดขันวินัยจราจร 10 ข้อหาหลัก และช่วงเทศกาล
+                            </h3>
+                            <p class="font-body text-slate-600 dark:text-slate-400 text-sm sm:text-base mt-3 leading-relaxed flex-1">
+                                ร่วมตั้งจุดตรวจกวดขันวินัยจราจรตามมาตรการ 10 ข้อหาหลัก ป้องกันการแข่งรถในทางสาธารณะ ตรวจวัดแอลกอฮอล์ และอำนวยความสะดวกการเดินทางช่วงเทศกาลสำคัญ
+                            </p>
+                            <div class="flex flex-wrap gap-2 mt-5">
+                                <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-primary-50 dark:bg-primary-950 text-primary-800 dark:text-gold-300">10 ข้อหาหลัก</span>
+                                <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-primary-50 dark:bg-primary-950 text-primary-800 dark:text-gold-300">ป้องกันเหตุ</span>
+                            </div>
+                            <div class="mt-6 pt-5 border-t border-slate-200/70 dark:border-slate-800 flex items-center justify-between">
+                                <button onclick="openProjectModal('การตั้งจุดตรวจกวดขันวินัยจราจร', 'ปฏิบัติหน้าที่ตั้งจุดตรวจตามคำสั่งผู้บังคับบัญชา เพื่อกวดขันผู้ฝ่าฝืนกฎจราจร ตรวจจับความเร็ว เมาไม่ขับ และป้องกันอาชญากรรมในพื้นที่รับผิดชอบ (อยู่ระหว่างอัปเดตข้อมูลเพิ่มเติม)', ['ตั้งจุดตรวจ', 'บังคับใช้กฎหมาย', 'เทศกาลปลอดภัย'])" class="text-sm font-semibold text-primary-700 dark:text-gold-400 hover:underline flex items-center gap-1.5">
+                                    <span>ดูรายละเอียดภารกิจ</span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                                </button>
+                                <span class="text-xs text-slate-400">สภ.หนองโดน</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- ภารกิจที่ 4 -->
+                    <article class="group bg-slate-50 dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200/80 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col reveal-element">
+                        <div class="relative h-52 sm:h-60 overflow-hidden bg-gradient-to-br from-primary-700 to-primary-950 flex items-center justify-center">
+                            <img 
+                                src="" 
+                                onerror="this.style.display='none';"
+                                alt="การช่วยเหลือประชาชนรถเสียและอุบัติเหตุ" 
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            >
+                            <div class="text-center p-6">
+                                <i class="fa-solid fa-truck-medical text-5xl text-gold-400 mb-3"></i>
+                                <div class="text-white/90 text-sm font-medium">จิตอาสาช่วยเหลือประชาชนบนท้องถนน</div>
+                            </div>
+                            <div class="absolute top-4 left-4 flex flex-wrap gap-2">
+                                <span class="px-3 py-1 rounded-full text-xs font-medium bg-primary-950/90 text-gold-300 border border-gold-400/40 backdrop-blur-sm">
+                                    จิตอาสา & บริการ
+                                </span>
+                                <span class="px-3 py-1 rounded-full text-xs font-medium bg-amber-500/90 text-slate-950 font-semibold">
+                                    อยู่ระหว่างอัปเดตข้อมูลเพิ่มเติม
+                                </span>
+                            </div>
+                        </div>
+                        <div class="p-6 sm:p-8 flex-1 flex flex-col">
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-primary-700 dark:group-hover:text-gold-400 transition-colors">
+                                ภารกิจช่วยเหลือประชาชนรถเสียฉุกเฉินและเหตุบนท้องถนน
+                            </h3>
+                            <p class="font-body text-slate-600 dark:text-slate-400 text-sm sm:text-base mt-3 leading-relaxed flex-1">
+                                เข้าช่วยเหลือประชาชนกรณีรถยนต์ขัดข้อง ยางรั่ว แบตเตอรี่หมด หรืออุบัติเหตุเบื้องต้น พร้อมประสานงานหน่วยกู้ชีพและเคลื่อนย้ายรถพ้นกีดขวางการจราจรอย่างรวดเร็ว
+                            </p>
+                            <div class="flex flex-wrap gap-2 mt-5">
+                                <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-primary-50 dark:bg-primary-950 text-primary-800 dark:text-gold-300">ตำรวจจิตอาสา</span>
+                                <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-primary-50 dark:bg-primary-950 text-primary-800 dark:text-gold-300">บริการประชาชน</span>
+                            </div>
+                            <div class="mt-6 pt-5 border-t border-slate-200/70 dark:border-slate-800 flex items-center justify-between">
+                                <button onclick="openProjectModal('ภารกิจช่วยเหลือประชาชนบนท้องถนน', 'ออกตรวจและเข้าช่วยเหลือประชาชนที่ประสบเหตุขัดข้องในการเดินทางในเขตอำเภอหนองโดนและเส้นทางใกล้เคียง เพื่อสร้างความอุ่นใจแก่ผู้ใช้รถใช้ถนน (อยู่ระหว่างอัปเดตข้อมูลเพิ่มเติม)', ['ช่วยเหลือฉุกเฉิน', 'จิตอาสา', 'บริการประชาชน'])" class="text-sm font-semibold text-primary-700 dark:text-gold-400 hover:underline flex items-center gap-1.5">
+                                    <span>ดูรายละเอียดภารกิจ</span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                                </button>
+                                <span class="text-xs text-slate-400">สภ.หนองโดน</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. ส่วนประวัติการรับราชการและการฝึกอบรม (Experience & Training) -->
+        <section id="experience" class="py-20 sm:py-28">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl mx-auto text-center mb-16 reveal-element">
+                    <span class="text-primary-700 dark:text-gold-400 font-semibold text-sm tracking-wider uppercase">Service Timeline</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mt-2">ประวัติการรับราชการและการฝึกอบรม</h2>
+                    <div class="w-20 h-1 bg-gradient-to-r from-primary-700 to-gold-400 mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <!-- คอลัมน์ซ้าย: เส้นทางการรับราชการ -->
+                    <div class="reveal-element">
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-8 flex items-center gap-3">
+                            <span class="w-10 h-10 rounded-xl bg-primary-700 text-gold-300 flex items-center justify-center shadow-sm">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </span>
+                            เส้นทางการรับราชการตำรวจ
+                        </h3>
+
+                        <div class="relative pl-8 border-l-2 border-primary-200 dark:border-slate-800 space-y-10">
+                            <!-- Item 1 -->
+                            <div class="relative">
+                                <span class="absolute -left-[41px] top-1 w-4 h-4 rounded-full bg-primary-700 ring-4 ring-gold-400/50"></span>
+                                <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-primary-50 dark:bg-primary-950 text-primary-800 dark:text-gold-300 border border-primary-200 dark:border-primary-800 mb-2">
+                                    ปัจจุบัน
+                                </span>
+                                <h4 class="text-lg font-bold text-slate-900 dark:text-white">ผู้บังคับหมู่ (ป้องกันปราบปราม) ปฏิบัติหน้าที่งานจราจร</h4>
+                                <p class="text-sm font-semibold text-primary-700 dark:text-gold-400 mb-3">สถานีตำรวจภูธรหนองโดน จังหวัดสระบุรี</p>
+                                <p class="font-body text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+                                    ปฏิบัติหน้าที่อำนวยความสะดวกด้านการจราจร กวดขันวินัยจราจร ตั้งจุดตรวจป้องกันอาชญากรรม และบริการช่วยเหลือประชาชนในเขตพื้นที่รับผิดชอบของ สภ.หนองโดน
+                                </p>
+                            </div>
+
+                            <!-- Item 2 -->
+                            <div class="relative">
+                                <span class="absolute -left-[41px] top-1 w-4 h-4 rounded-full bg-slate-400 dark:bg-slate-600 ring-4 ring-white dark:ring-slate-950"></span>
+                                <span class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 mb-2">
+                                    การบรรจุแต่งตั้ง
+                                </span>
+                                <h4 class="text-lg font-bold text-slate-900 dark:text-white">เข้ารับราชการตำรวจชั้นประทวน (ยศ สิบตำรวจตรี)</h4>
+                                <p class="text-sm font-medium text-slate-500 dark:text-slate-400 mb-3">ตำรวจภูธรภาค 1 • สำนักงานตำรวจแห่งชาติ</p>
+                                <p class="font-body text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+                                    ได้รับการแต่งตั้งบรรจุเข้ารับราชการตำรวจในสายงานป้องกันปราบปราม ปฏิบัติหน้าที่ผู้พิทักษ์สันติราษฎร์ด้วยความภาคภูมิใจและยึดมั่นในอุดมคติตำรวจ
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- คอลัมน์ขวา: การศึกษาและการฝึกอบรม -->
+                    <div class="reveal-element">
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-8 flex items-center gap-3">
+                            <span class="w-10 h-10 rounded-xl bg-primary-800 text-gold-300 flex items-center justify-center shadow-sm">
+                                <i class="fa-solid fa-award"></i>
+                            </span>
+                            การศึกษาและการฝึกอบรมหลักสูตรตำรวจ
+                        </h3>
+
+                        <div class="relative pl-8 border-l-2 border-primary-200 dark:border-slate-800 space-y-10">
+                            <!-- Edu 1 -->
+                            <div class="relative">
+                                <span class="absolute -left-[41px] top-1 w-4 h-4 rounded-full bg-gold-500 ring-4 ring-white dark:ring-slate-950"></span>
+                                <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-amber-50 dark:bg-amber-950/60 text-amber-800 dark:text-gold-300 border border-amber-200 dark:border-amber-800 mb-2">
+                                    หลักสูตรพื้นฐานตำรวจ
+                                </span>
+                                <h4 class="text-lg font-bold text-slate-900 dark:text-white">หลักสูตรนักเรียนนายสิบตำรวจ (นสต.)</h4>
+                                <p class="text-sm font-medium text-slate-500 dark:text-slate-400 mb-3">ศูนย์ฝึกอบรมตำรวจภูธรภาค 1 (ศฝร.ภ.1)</p>
+                                <p class="font-body text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+                                    สำเร็จการฝึกอบรมวิชาชีพตำรวจ ระเบียบวินัย กฎหมายอาญาและวิธีพิจารณาความอาญา ยุทธวิธีตำรวจ และการปฏิบัติหน้าที่บริการประชาชน
+                                </p>
+                            </div>
+
+                            <!-- Cert 1 -->
+                            <div class="relative">
+                                <span class="absolute -left-[41px] top-1 w-4 h-4 rounded-full bg-slate-400 dark:bg-slate-600 ring-4 ring-white dark:ring-slate-950"></span>
+                                <span class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 mb-2">
+                                    การอบรมเฉพาะทาง
+                                </span>
+                                <h4 class="text-lg font-bold text-slate-900 dark:text-white">การอบรมเพิ่มประสิทธิภาพงานจราจรและการกู้ชีพเบื้องต้น</h4>
+                                <p class="text-sm font-medium text-slate-500 dark:text-slate-400 mb-3">ตำรวจภูธรจังหวัดสระบุรี</p>
+                                <p class="font-body text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+                                    ฝึกทักษะสัญญาณมือจราจร การใช้ระบบใบสั่งอิเล็กทรอนิกส์ (PTM) การจัดการจราจรในสถานการณ์ฉุกเฉิน และการช่วยฟื้นคืนชีพขั้นพื้นฐาน (CPR)
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. ส่วนฟอร์มติดต่อกลับ / แจ้งข้อมูล (Contact Form & Station Info) -->
+        <section id="contact" class="py-20 sm:py-28 bg-white dark:bg-slate-900/50 border-t border-slate-200/80 dark:border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl mx-auto text-center mb-16 reveal-element">
+                    <span class="text-primary-700 dark:text-gold-400 font-semibold text-sm tracking-wider uppercase">Contact & Traffic Report</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mt-2">ติดต่อราชการ / แจ้งปัญหาการจราจร</h2>
+                    <div class="w-20 h-1 bg-gradient-to-r from-primary-700 to-gold-400 mx-auto mt-4 rounded-full"></div>
+                    <p class="font-body text-slate-600 dark:text-slate-400 mt-4">
+                        ประชาชนหรือหน่วยงานที่ต้องการติดต่อประสานงาน สอบถามข้อกฎหมายจราจร หรือแจ้งปัญหาการจราจรในพื้นที่ สภ.หนองโดน สามารถส่งข้อมูลผ่านแบบฟอร์มด้านล่างได้ครับ
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+                    <!-- ข้อมูลติดต่อสถานีตำรวจภูธรหนองโดน (ซ้าย) -->
+                    <div class="lg:col-span-5 space-y-6 reveal-element">
+                        <div class="bg-gradient-to-br from-primary-800 via-primary-900 to-slate-950 rounded-3xl p-8 text-white shadow-xl border border-gold-400/30">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-10 h-10 rounded-xl bg-gold-400/20 border border-gold-400/50 text-gold-300 flex items-center justify-center">
+                                    <i class="fa-solid fa-building-shield"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-gold-300">ช่องทางติดต่อ สภ.หนองโดน</h3>
+                            </div>
+                            <p class="font-body text-primary-100 text-sm sm:text-base mb-8 leading-relaxed">
+                                ส.ต.ต.โชคชัย สมนิยาม ผบ.หมู่ (ป.) ปฏิบัติหน้าที่งานจราจร สถานีตำรวจภูธรหนองโดน จังหวัดสระบุรี
+                            </p>
+
+                            <div class="space-y-6">
+                                <!-- เบอร์โทรศัพท์ สภ.หนองโดน -->
+                                <div class="flex items-start gap-4">
+                                    <div class="w-11 h-11 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center shrink-0 text-gold-300 text-lg">
+                                        <i class="fa-solid fa-phone-volume"></i>
+                                    </div>
+                                    <div class="min-w-0 flex-1">
+                                        <div class="text-xs text-primary-200">โทรศัพท์ติดต่อ สภ.หนองโดน</div>
+                                        <div class="font-semibold text-base sm:text-lg text-white" id="station-phone">036-397-111</div>
+                                        <button onclick="copyText('station-phone', 'เบอร์โทรศัพท์ สภ.หนองโดน')" class="mt-1 text-xs text-gold-300 hover:text-white underline flex items-center gap-1">
+                                            <i class="fa-regular fa-copy"></i> คัดลอกเบอร์โทรศัพท์
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- อีเมลประสานงาน -->
+                                <div class="flex items-start gap-4">
+                                    <div class="w-11 h-11 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center shrink-0 text-gold-300 text-lg">
+                                        <i class="fa-regular fa-envelope"></i>
+                                    </div>
+                                    <div class="min-w-0 flex-1">
+                                        <div class="text-xs text-primary-200">อีเมลติดต่อประสานงาน</div>
+                                        <div class="font-medium text-sm sm:text-base truncate" id="email-text">chokchai.traffic@nongdon-police.go.th</div>
+                                        <button onclick="copyText('email-text', 'อีเมลติดต่อ')" class="mt-1 text-xs text-gold-300 hover:text-white underline flex items-center gap-1">
+                                            <i class="fa-regular fa-copy"></i> คัดลอกอีเมล
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- ที่ตั้งหน่วย -->
+                                <div class="flex items-start gap-4">
+                                    <div class="w-11 h-11 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center shrink-0 text-gold-300 text-lg">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-xs text-primary-200">ที่ตั้งหน่วยปฏิบัติงาน</div>
+                                        <div class="font-medium text-sm sm:text-base leading-snug">
+                                            สถานีตำรวจภูธรหนองโดน ต.หนองโดน อ.หนองโดน จ.สระบุรี 18190
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- กล่องสายด่วนฉุกเฉิน -->
+                            <div class="mt-8 pt-6 border-t border-white/15 grid grid-cols-2 gap-3">
+                                <a href="tel:191" class="p-3 rounded-2xl bg-rose-600/90 hover:bg-rose-600 text-center transition-colors shadow-sm">
+                                    <div class="text-[11px] text-rose-100">เหตุด่วนเหตุร้าย</div>
+                                    <div class="text-xl font-bold text-white">โทร 191</div>
+                                </a>
+                                <a href="tel:1197" class="p-3 rounded-2xl bg-gold-500/90 hover:bg-gold-500 text-slate-950 text-center transition-colors shadow-sm">
+                                    <div class="text-[11px] font-medium text-slate-900">สายด่วนจราจร</div>
+                                    <div class="text-xl font-bold">โทร 1197</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ฟอร์มติดต่อกลับ (ขวา) -->
+                    <div class="lg:col-span-7 reveal-element">
+                        <div class="bg-slate-50 dark:bg-slate-900 rounded-3xl p-6 sm:p-10 border border-slate-200/80 dark:border-slate-800 shadow-sm">
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
+                                <i class="fa-solid fa-file-signature text-primary-700 dark:text-gold-400"></i>
+                                <span>แบบฟอร์มติดต่อกลับ / แจ้งข้อมูล</span>
+                            </h3>
+
+                            <form id="contact-form" novalidate class="space-y-5">
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                    <!-- ช่องกรอกชื่อ-นามสกุล -->
+                                    <div>
+                                        <label for="fullName" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">
+                                            ชื่อ-นามสกุล ผู้ติดต่อ <span class="text-rose-600">*</span>
+                                        </label>
+                                        <input 
+                                            type="text" 
+                                            id="fullName" 
+                                            name="fullName" 
+                                            placeholder="เช่น นายสมชาย ใจดี"
+                                            class="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-700 dark:focus:ring-gold-400 focus:border-transparent transition-all text-sm sm:text-base"
+                                        >
+                                        <p id="error-fullName" class="hidden text-xs text-rose-600 mt-1.5 flex items-center gap-1">
+                                            <i class="fa-solid fa-circle-exclamation"></i> กรุณากรอกชื่อ-นามสกุลของคุณ
+                                        </p>
+                                    </div>
+
+                                    <!-- ช่องกรอกเบอร์โทรศัพท์หรืออีเมล -->
+                                    <div>
+                                        <label for="contactInfo" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">
+                                            เบอร์โทรศัพท์ หรือ อีเมล <span class="text-rose-600">*</span>
+                                        </label>
+                                        <input 
+                                            type="text" 
+                                            id="contactInfo" 
+                                            name="contactInfo" 
+                                            placeholder="เช่น 089-xxx-xxxx หรือ name@email.com"
+                                            class="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-700 dark:focus:ring-gold-400 focus:border-transparent transition-all text-sm sm:text-base"
+                                        >
+                                        <p id="error-contactInfo" class="hidden text-xs text-rose-600 mt-1.5 flex items-center gap-1">
+                                            <i class="fa-solid fa-circle-exclamation"></i> กรุณากรอกเบอร์โทรศัพท์ (9-10 หลัก) หรืออีเมลให้ถูกต้อง
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- ช่องเลือกหัวข้อเรื่อง -->
+                                <div>
+                                    <label for="subject" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">
+                                        ประเภทเรื่องที่ติดต่อ <span class="text-rose-600">*</span>
+                                    </label>
+                                    <select 
+                                        id="subject" 
+                                        name="subject" 
+                                        class="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-700 dark:focus:ring-gold-400 focus:border-transparent transition-all text-sm sm:text-base"
+                                    >
+                                        <option value="">-- กรุณาเลือกหัวข้อเรื่องที่ต้องการติดต่อ --</option>
+                                        <option value="ติดต่อราชการ / ประสานงานหน่วยงาน">ติดต่อราชการ / ประสานงานหน่วยงาน</option>
+                                        <option value="สอบถามข้อกฎหมายจราจร / ใบสั่งจราจร">สอบถามข้อกฎหมายจราจร / ใบสั่งจราจร</option>
+                                        <option value="แจ้งปัญหาการจราจรในพื้นที่ สภ.หนองโดน">แจ้งปัญหาการจราจรในพื้นที่ สภ.หนองโดน</option>
+                                        <option value="ขอความอนุเคราะห์อำนวยการจราจรในกิจกรรม">ขอความอนุเคราะห์อำนวยการจราจรในกิจกรรม</option>
+                                        <option value="อื่นๆ">อื่นๆ</option>
+                                    </select>
+                                    <p id="error-subject" class="hidden text-xs text-rose-600 mt-1.5 flex items-center gap-1">
+                                        <i class="fa-solid fa-circle-exclamation"></i> กรุณาเลือกประเภทเรื่องที่ต้องการติดต่อ
+                                    </p>
+                                </div>
+
+                                <!-- ช่องกรอกข้อความ -->
+                                <div>
+                                    <label for="message" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">
+                                        รายละเอียดข้อความ / สถานที่ <span class="text-rose-600">*</span>
+                                    </label>
+                                    <textarea 
+                                        id="message" 
+                                        name="message" 
+                                        rows="5" 
+                                        placeholder="ระบุรายละเอียดเรื่องที่ต้องการติดต่อ วัน-เวลา หรือพิกัดสถานที่ในเขตอำเภอหนองโดน..."
+                                        class="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-700 dark:focus:ring-gold-400 focus:border-transparent transition-all text-sm sm:text-base resize-y"
+                                    ></textarea>
+                                    <div class="flex justify-between items-center mt-1.5">
+                                        <p id="error-message" class="hidden text-xs text-rose-600 flex items-center gap-1">
+                                            <i class="fa-solid fa-circle-exclamation"></i> กรุณากรอกรายละเอียดอย่างน้อย 10 ตัวอักษร
+                                        </p>
+                                        <span id="char-count" class="text-xs text-slate-400 ml-auto">0 ตัวอักษร</span>
+                                    </div>
+                                </div>
+
+                                <!-- ปุ่มส่งข้อความ -->
+                                <div class="pt-2">
+                                    <button 
+                                        type="submit" 
+                                        id="submit-btn"
+                                        class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-primary-700 hover:bg-primary-800 text-white font-medium border border-gold-400/60 shadow-lg shadow-primary-800/25 transition-all hover:-translate-y-0.5 flex items-center justify-center gap-2.5 disabled:opacity-60 disabled:cursor-not-allowed"
+                                    >
+                                        <i class="fa-solid fa-paper-plane text-gold-300"></i>
+                                        <span id="submit-btn-text">ส่งข้อมูลติดต่อกลับ</span>
+                                    </button>
+                                </div>
+                            </form>
+
+                            <!-- กล่องแสดงผลยืนยันการส่งบนหน้าเว็บ (Inline Success Banner) -->
+                            <div id="form-success-box" class="hidden mt-6 p-5 rounded-2xl bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800/80 text-emerald-900 dark:text-emerald-200">
+                                <div class="flex items-start gap-3.5">
+                                    <div class="w-9 h-9 rounded-full bg-emerald-600 text-white flex items-center justify-center shrink-0 mt-0.5">
+                                        <i class="fa-solid fa-check"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-base">บันทึกข้อมูลการติดต่อเรียบร้อยแล้ว ขอบคุณครับ!</h4>
+                                        <p id="success-summary" class="font-body text-sm mt-1 opacity-90"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 8. ส่วนท้ายเว็บ (Footer) -->
+    <footer class="bg-primary-950 text-slate-200 border-t-2 border-gold-400/50 py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="text-center md:text-left">
+                    <div class="font-bold text-lg text-white flex items-center justify-center md:justify-start gap-2">
+                        <i class="fa-solid fa-shield-halved text-gold-400"></i>
+                        <span>ส.ต.ต.โชคชัย สมนิยาม</span>
+                    </div>
+                    <p class="font-body text-xs sm:text-sm text-primary-200 mt-1">
+                        ผู้บังคับหมู่ (ป้องกันปราบปราม) ปฏิบัติหน้าที่งานจราจร สถานีตำรวจภูธรหนองโดน จังหวัดสระบุรี
+                    </p>
+                    <p class="font-body text-xs text-slate-400 mt-1">
+                        &copy; <span id="current-year">2026</span> สงวนลิขสิทธิ์ทั้งหมด | เหตุด่วนเหตุร้ายโทร <strong class="text-gold-300">191</strong> • สายด่วนจราจรโทร <strong class="text-gold-300">1197</strong>
+                    </p>
+                </div>
+
+                <!-- ปุ่มเลื่อนกลับขึ้นด้านบน -->
+                <button 
+                    id="back-to-top" 
+                    aria-label="เลื่อนกลับขึ้นด้านบน"
+                    class="px-5 py-2.5 rounded-xl bg-primary-800 hover:bg-primary-700 text-gold-300 hover:text-white border border-gold-400/40 text-sm font-medium transition-all flex items-center gap-2 shadow-sm"
+                >
+                    <span>กลับขึ้นด้านบน</span>
+                    <i class="fa-solid fa-arrow-up text-xs"></i>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification แจ้งเตือนมุมขวาล่าง -->
+    <div id="toast-notification" class="fixed bottom-5 right-5 z-50 transform translate-y-24 opacity-0 pointer-events-none transition-all duration-300 max-w-sm w-full px-4 sm:px-0">
+        <div class="bg-primary-950 text-white px-5 py-4 rounded-2xl shadow-2xl border border-gold-400/50 flex items-center gap-3.5">
+            <div id="toast-icon" class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <div class="flex-1 min-w-0">
+                <h5 id="toast-title" class="text-sm font-semibold text-gold-300">แจ้งเตือน</h5>
+                <p id="toast-message" class="font-body text-xs text-slate-200 mt-0.5 truncate">ดำเนินการสำเร็จ</p>
+            </div>
+            <button onclick="hideToast()" class="text-slate-400 hover:text-white p-1">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Modal แสดงรายละเอียดภารกิจ -->
+    <div id="project-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-950/75 backdrop-blur-sm">
+        <div class="bg-white dark:bg-slate-900 rounded-3xl max-w-lg w-full p-6 sm:p-8 border-2 border-primary-700/30 dark:border-gold-400/30 shadow-2xl transform transition-all">
+            <div class="flex justify-between items-start gap-4 mb-4">
+                <h3 id="modal-project-title" class="text-xl font-bold text-primary-800 dark:text-gold-400">ชื่อภารกิจ</h3>
+                <button onclick="closeProjectModal()" class="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-500 hover:text-slate-900 dark:hover:text-white">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <p id="modal-project-desc" class="font-body text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
+                รายละเอียดภารกิจ
+            </p>
+            <div class="mb-6">
+                <div class="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">หมวดหมู่การปฏิบัติหน้าที่</div>
+                <div id="modal-project-tags" class="flex flex-wrap gap-2"></div>
+            </div>
+            <div class="flex justify-end gap-3">
+                <button onclick="closeProjectModal()" class="px-5 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 text-sm font-medium hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+                    ปิดหน้าต่าง
+                </button>
+                <a href="#contact" onclick="closeProjectModal()" class="px-5 py-2.5 rounded-xl bg-primary-700 hover:bg-primary-800 text-white border border-gold-400/50 text-sm font-medium transition-colors">
+                    ติดต่อสอบถามข้อมูล
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript ควบคุมการทำงานทั้งหมด -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // ตั้งค่าปีปัจจุบันใน Footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+
+            // 1. ระบบสลับ Dark / Light Mode
+            const htmlElement = document.documentElement;
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            const darkIcon = document.getElementById('theme-icon-dark');
+            const lightIcon = document.getElementById('theme-icon-light');
+
+            function updateThemeIcons(isDark) {
+                if (isDark) {
+                    darkIcon.classList.remove('hidden');
+                    lightIcon.classList.add('hidden');
+                } else {
+                    darkIcon.classList.add('hidden');
+                    lightIcon.classList.remove('hidden');
+                }
+            }
+
+            const savedTheme = localStorage.getItem('police-portfolio-theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            
+            if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+                htmlElement.classList.add('dark');
+                updateThemeIcons(true);
+            } else {
+                htmlElement.classList.remove('dark');
+                updateThemeIcons(false);
+            }
+
+            themeToggleBtn.addEventListener('click', () => {
+                const isDark = htmlElement.classList.toggle('dark');
+                localStorage.setItem('police-portfolio-theme', isDark ? 'dark' : 'light');
+                updateThemeIcons(isDark);
+            });
+
+            // 2. ระบบเมนูบนมือถือ (Mobile Menu)
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // 3. ระบบ Animation เมื่อเลื่อนหน้าจอ (Intersection Observer) & Skill Bars
+            const revealElements = document.querySelectorAll('.reveal-element');
+
+            revealElements.forEach(el => {
+                el.classList.add('opacity-0', 'translate-y-6', 'transition-all', 'duration-700', 'ease-out');
+            });
+
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.remove('opacity-0', 'translate-y-6');
+                        entry.target.classList.add('opacity-100', 'translate-y-0');
+                        
+                        const bars = entry.target.querySelectorAll('.skill-bar');
+                        bars.forEach(bar => {
+                            const targetWidth = bar.getAttribute('data-width');
+                            setTimeout(() => {
+                                bar.style.width = targetWidth;
+                            }, 200);
+                        });
+
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12 });
+
+            revealElements.forEach(el => revealObserver.observe(el));
+
+            // 4. ปุ่มเลื่อนกลับขึ้นด้านบน (Back to Top)
+            const backToTopBtn = document.getElementById('back-to-top');
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // 5. ระบบตรวจสอบความถูกต้องของฟอร์มติดต่อกลับ (Form Validation & Submission)
+            const contactForm = document.getElementById('contact-form');
+            const fullNameInput = document.getElementById('fullName');
+            const contactInfoInput = document.getElementById('contactInfo');
+            const subjectInput = document.getElementById('subject');
+            const messageInput = document.getElementById('message');
+            const charCount = document.getElementById('char-count');
+            const submitBtn = document.getElementById('submit-btn');
+            const submitBtnText = document.getElementById('submit-btn-text');
+            const formSuccessBox = document.getElementById('form-success-box');
+            const successSummary = document.getElementById('success-summary');
+
+            messageInput.addEventListener('input', () => {
+                const len = messageInput.value.trim().length;
+                charCount.textContent = `${len} ตัวอักษร`;
+                if (len >= 10) {
+                    clearFieldError(messageInput, 'error-message');
+                }
+            });
+
+            fullNameInput.addEventListener('input', () => clearFieldError(fullNameInput, 'error-fullName'));
+            contactInfoInput.addEventListener('input', () => clearFieldError(contactInfoInput, 'error-contactInfo'));
+            subjectInput.addEventListener('change', () => clearFieldError(subjectInput, 'error-subject'));
+
+            function showFieldError(inputEl, errorId) {
+                inputEl.classList.add('border-rose-600', 'ring-1', 'ring-rose-600');
+                inputEl.classList.remove('border-slate-300', 'dark:border-slate-700');
+                document.getElementById(errorId).classList.remove('hidden');
+            }
+
+            function clearFieldError(inputEl, errorId) {
+                inputEl.classList.remove('border-rose-600', 'ring-1', 'ring-rose-600');
+                inputEl.classList.add('border-slate-300', 'dark:border-slate-700');
+                document.getElementById(errorId).classList.add('hidden');
+            }
+
+            // ตรวจสอบว่าเป็นเบอร์โทรศัพท์ไทย (9-10 หลัก) หรืออีเมลที่ถูกต้อง
+            function isValidPhoneOrEmail(value) {
+                const cleanedPhone = value.replace(/[-\s]/g, '');
+                const isPhone = /^0\d{8,9}$/.test(cleanedPhone);
+                const isEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+                return isPhone || isEmail;
+            }
+
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                formSuccessBox.classList.add('hidden');
+
+                let isValid = true;
+                const fullName = fullNameInput.value.trim();
+                const contactInfo = contactInfoInput.value.trim();
+                const subject = subjectInput.value.trim();
+                const message = messageInput.value.trim();
+
+                if (fullName.length < 2) {
+                    showFieldError(fullNameInput, 'error-fullName');
+                    isValid = false;
+                } else {
+                    clearFieldError(fullNameInput, 'error-fullName');
+                }
+
+                if (!isValidPhoneOrEmail(contactInfo)) {
+                    showFieldError(contactInfoInput, 'error-contactInfo');
+                    isValid = false;
+                } else {
+                    clearFieldError(contactInfoInput, 'error-contactInfo');
+                }
+
+                if (!subject) {
+                    showFieldError(subjectInput, 'error-subject');
+                    isValid = false;
+                } else {
+                    clearFieldError(subjectInput, 'error-subject');
+                }
+
+                if (message.length < 10) {
+                    showFieldError(messageInput, 'error-message');
+                    isValid = false;
+                } else {
+                    clearFieldError(messageInput, 'error-message');
+                }
+
+                if (!isValid) {
+                    showToast('ข้อมูลไม่ครบถ้วน', 'กรุณาตรวจสอบช่องที่มีเครื่องหมายสีแดง', 'error');
+                    return;
+                }
+
+                submitBtn.disabled = true;
+                submitBtnText.textContent = 'กำลังบันทึกข้อมูล...';
+
+                setTimeout(() => {
+                    submitBtn.disabled = false;
+                    submitBtnText.textContent = 'ส่งข้อมูลติดต่อกลับ';
+
+                    successSummary.textContent = `ผู้ติดต่อ: ${fullName} (${contactInfo}) — เรื่อง: "${subject}" ระบบได้ส่งเรื่องถึง ส.ต.ต.โชคชัย สมนิยาม เรียบร้อยแล้ว`;
+                    formSuccessBox.classList.remove('hidden');
+
+                    showToast('ส่งข้อมูลสำเร็จ!', 'ส.ต.ต.โชคชัย จะดำเนินการตรวจสอบและติดต่อกลับครับ', 'success');
+
+                    contactForm.reset();
+                    charCount.textContent = '0 ตัวอักษร';
+                }, 700);
+            });
+        });
+
+        // ฟังก์ชัน Toast Notification
+        let toastTimeout;
+        function showToast(title, message, type = 'success') {
+            const toast = document.getElementById('toast-notification');
+            const toastTitle = document.getElementById('toast-title');
+            const toastMessage = document.getElementById('toast-message');
+            const toastIcon = document.getElementById('toast-icon');
+
+            toastTitle.textContent = title;
+            toastMessage.textContent = message;
+
+            if (type === 'error') {
+                toastIcon.className = 'w-8 h-8 rounded-full bg-rose-500/20 text-rose-400 flex items-center justify-center shrink-0';
+                toastIcon.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i>';
+            } else {
+                toastIcon.className = 'w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0';
+                toastIcon.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
+            }
+
+            toast.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(() => {
+                hideToast();
+            }, 4500);
+        }
+
+        function hideToast() {
+            const toast = document.getElementById('toast-notification');
+            toast.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
+            toast.classList.remove('translate-y-0', 'opacity-100');
+        }
+
+        // ฟังก์ชันคัดลอกเบอร์โทรหรืออีเมล
+        function copyText(elementId, label) {
+            const text = document.getElementById(elementId).textContent;
+            const tempInput = document.createElement('input');
+            tempInput.value = text;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+            showToast(`คัดลอก${label}แล้ว`, text, 'success');
+        }
+
+        // ฟังก์ชันเปิด/ปิด Modal รายละเอียดภารกิจ
+        function openProjectModal(title, description, tags) {
+            const modal = document.getElementById('project-modal');
+            document.getElementById('modal-project-title').textContent = title;
+            document.getElementById('modal-project-desc').textContent = description;
+            
+            const tagsContainer = document.getElementById('modal-project-tags');
+            tagsContainer.innerHTML = '';
+            tags.forEach(tag => {
+                const span = document.createElement('span');
+                span.className = 'px-3 py-1 rounded-lg text-xs font-medium bg-primary-50 dark:bg-primary-950 text-primary-800 dark:text-gold-300 border border-primary-200 dark:border-primary-800';
+                span.textContent = tag;
+                tagsContainer.appendChild(span);
+            });
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeProjectModal() {
+            const modal = document.getElementById('project-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        document.getElementById('project-modal').addEventListener('click', (e) => {
+            if (e.target.id === 'project-modal') {
+                closeProjectModal();
+            }
+        });
+    </script>
+</body>
+</html>
